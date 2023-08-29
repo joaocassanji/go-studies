@@ -11,7 +11,7 @@ func main() {
 	})
 
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "first-web-app/home.html")
+		http.ServeFile(w, r, "home.html")
 	})
 
 	http.ListenAndServe(":3000", nil)
