@@ -1,0 +1,14 @@
+2023/09/03 15:09:52 itemClosingStock is  0
+2023/09/03 15:09:52 itemSold is  100
+2023/09/03 15:09:52 itemClosingStock is  400
+2023/09/03 15:09:52 itemReturned is  50
+2023/09/03 15:09:52 itemClosingStock is  450
+2023/09/03 15:09:52 itemMissing is  5
+2023/09/03 15:09:52 itemClosingStock is  445
+2023/09/03 15:26:06 itemClosingStock is  0
+2023/09/03 15:26:06 itemSold is  100
+2023/09/03 15:26:06 itemClosingStock is  400
+2023/09/03 15:26:06 itemReturned is  50
+2023/09/03 15:26:06 itemClosingStock is  450
+2023/09/03 15:26:06 itemMissing is  5
+2023/09/03 15:26:06 itemClosingStock is  445
