@@ -8,16 +8,34 @@ import (
 )
 
 func main() {
-	router := gin.Default()
 
-	router.GET("/employee", func(ctx *gin.Context) {
-		ctx.File("gin-1-fundamentals-course-PS/routing-with-http-methods/public/employee.html")
-	})
+	r := gin.Default()
 
-	router.POST("/employee", func(ctx *gin.Context) {
-		ctx.String(http.StatusOK, "New request POSTED successfully")
-	})
+	filepath := "gin-1-fundamentals-course-PS/routing-with-http-methods/public/employee.html"
+	createHttpRoute(r, "/employee", "GET", true, filepath)
+	createHttpRoute(r, "/employee", "POST", false, "New request POSTED successfully")
 
-	log.Fatal(router.Run(":3000"))
+	log.Fatal(r.Run(":3000"))
 
+}
+
+func createHttpRoute(router *gin.Engine, routePath string, method string, isFile bool, filePathOrStr string) gin.IRoutes {
+	var route gin.IRoutes
+
+	handler := func(router *gin.Context) {
+		if isFile {
+			router.File(filePathOrStr)
+		} else {
+			router.String(http.StatusOK, filePathOrStr)
+		}
+	}
+
+	switch method {
+	case "POST":
+		route = router.POST(routePath, handler)
+	case "GET":
+		route = router.GET(routePath, handler)
+	}
+
+	return route
 }
